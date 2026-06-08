@@ -1,0 +1,48 @@
+---
+import type { Product } from "../data/products";
+import { FINISH_COLORS } from "../data/products";
+
+type Props = { product: Product; group?: string };
+const { product, group } = Astro.props;
+---
+
+<a
+  href={`/portfolio/${product.slug}`}
+  class="reveal group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-chrome)] bg-white transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-[var(--color-ink)]"
+  data-reveal-group={group}
+  data-category={product.category}
+>
+  <div class="aspect-square overflow-hidden bg-[var(--color-glass)]">
+    <img
+      src={product.images[0]}
+      alt={product.name}
+      loading="lazy"
+      decoding="async"
+      width="600"
+      height="600"
+      class="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+    />
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <span class="eyebrow eyebrow--muted">{product.categoryLabel}</span>
+    <h3 class="mt-2 text-[1.0625rem] font-semibold leading-snug tracking-[-0.01em] text-[var(--color-ink)]">
+      {product.name}
+    </h3>
+
+    <div class="mt-auto flex items-center justify-between pt-4">
+      <span class="code text-[var(--color-ink-muted)]">{product.code}</span>
+      <div class="flex items-center gap-1.5">
+        {
+          product.finishes.map((f) => (
+            <span
+              class="h-3.5 w-3.5 rounded-full border border-[var(--color-chrome)]"
+              style={`background:${FINISH_COLORS[f]?.hex ?? "#ccc"}`}
+              title={FINISH_COLORS[f]?.name ?? f}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</a>

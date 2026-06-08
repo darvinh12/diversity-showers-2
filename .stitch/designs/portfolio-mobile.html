@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | Diversity Showers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#c4e7ff",
+                        "on-tertiary-container": "#fdfcff",
+                        "surface-container-highest": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed-dim": "#c1c7cc",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface-variant": "#40484e",
+                        "tertiary": "#595c61",
+                        "on-secondary-fixed-variant": "#41484c",
+                        "on-primary-container": "#fcfcff",
+                        "secondary-container": "#dde3e8",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary-fixed-variant": "#44474b",
+                        "secondary-fixed": "#dde3e8",
+                        "on-tertiary-fixed": "#191c20",
+                        "surface-container": "#edeeef",
+                        "primary-container": "#2a7ca3",
+                        "outline-variant": "#bfc8cf",
+                        "primary": "#006387",
+                        "inverse-primary": "#86cffa",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c5c6cc",
+                        "on-primary-fixed": "#001e2c",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#004c69",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "surface-bright": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e1e2e8",
+                        "tertiary-container": "#727579",
+                        "on-secondary-fixed": "#161c20",
+                        "on-secondary-container": "#5f656a",
+                        "outline": "#70787f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "64px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "eyebrow-mono": ["Space Mono"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "product-code": ["Space Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "label-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "eyebrow-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "product-code": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .chrome-hairline {
+            border: 1px solid #C7CDD2;
+        }
+        .glass-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 glass-blur border-b border-outline-variant/30 flex items-center justify-between px-gutter h-16 w-full">
+<div class="flex items-center gap-2">
+<button class="p-2 -ml-2 active:scale-95 transition-transform" onclick="toggleDrawer()">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-surface">DIVERSITY SHOWERS</span>
+</div>
+<button class="p-2 -mr-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+</header>
+<!-- Drawer Overlay -->
+<div class="fixed inset-0 bg-black/40 z-[55] hidden opacity-0 transition-opacity duration-300" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<!-- NavigationDrawer -->
+<aside class="fixed inset-y-0 left-0 w-80 z-[60] bg-surface border-r border-outline-variant shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col h-full p-6" id="main-drawer">
+<div class="flex justify-between items-center mb-8">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">DIVERSITY SHOWERS</span>
+<button onclick="toggleDrawer()"><span class="material-symbols-outlined">close</span></button>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-secondary-container/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-body-lg text-body-lg">Our Services</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-lg px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-body-lg text-body-lg">Portfolio</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-secondary-container/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-body-lg text-body-lg">Our Projects</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-secondary-container/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-body-lg text-body-lg">FAQ</span>
+</a>
+</nav>
+</aside>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="bg-[#1A1D21] px-gutter py-section-gap-mobile flex flex-col gap-4">
+<span class="font-eyebrow-mono text-eyebrow-mono text-outline-variant uppercase tracking-[0.2em]">[ OUR PORTFOLIO ]</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-surface-bright leading-tight">Some of our works and case studies for clients</h1>
+<p class="font-body-lg text-body-lg text-[#F5F6F7] opacity-80">Give a special touch to your bathroom.</p>
+</section>
+<!-- Sticky Filter Bar -->
+<section class="sticky top-16 z-40 bg-[#F5F6F7] border-b border-outline-variant/30 py-4 overflow-hidden">
+<div class="flex items-center gap-4 overflow-x-auto no-scrollbar px-gutter">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-[#2E7FA6] text-white font-label-sm text-label-sm transition-all active:scale-95">All</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full chrome-hairline text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-all active:scale-95">Handles</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full chrome-hairline text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-all active:scale-95">Clips &amp; Clamps</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full chrome-hairline text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-all active:scale-95">Doors</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full chrome-hairline text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-all active:scale-95">Hinges</button>
+</div>
+<div class="px-gutter mt-2 flex justify-end">
+<span class="font-eyebrow-mono text-[10px] text-outline uppercase">24 RESULTS FOUND</span>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-gutter py-8">
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl chrome-hairline overflow-hidden flex flex-col h-full group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A macro close-up of a high-quality chrome-finished glass shower door hinge. The metallic surface is highly reflective, capturing soft studio lighting in a minimalist, light-mode setting. The thick glass panel meets the polished hinge with technical precision, emphasizing the elegant architectural hardware style of Diversity Showers' glass systems." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7Mjo-lgSEemZAAB-_2xML61qnx4b6t9aaNnA915VCk0H-snH8iLwG1JMhQuURVfDbp0U2N2_sghMoMpw1gNfttEL1aZ9Ynxlz1pECdu-sOiMRr_RgYZb4digX2skk1JCG5tZojQnrvCoa9RZLIyGWApnmRWBAwxgr5y2OA4z-ZZ186Z-fJO5bTTR2AqBJAK44aYOx5Oy4ifBKgb8Q9R7n5QtJcWRcNJl1YmTtfyKmjAwZZOyFa4e1na_yfJ1Cae2Z8F0y0hlcYNP"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/80 glass-blur rounded chrome-hairline">
+<span class="font-product-code text-[10px] text-primary font-bold">HINGES</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-product-code text-product-code text-outline-variant mb-1">DSQ037</span>
+<h3 class="font-label-sm text-label-sm text-on-surface leading-tight mb-3">Square 180° Glass Hinge</h3>
+<div class="mt-auto flex gap-1.5">
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#C7CDD2]" title="Chrome"></div>
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#1A1D21]" title="Matte Black"></div>
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#D4AF37]" title="Gold"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl chrome-hairline overflow-hidden flex flex-col h-full group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional detail shot of a sleek, brushed stainless steel cylindrical handle attached to a clear tempered glass shower door. The focus is sharp on the metallic texture and the mounting hardware, with a blurred background of a modern luxury bathroom. The lighting is bright and airy, reflecting a technical elegance aesthetic with high-contrast chrome accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MTCY9wcTVRK0NGGaeQuCMUgMTaECRM5rP0NVQhZaK8tTuh_jmjBO0O-pZY5X5lUgYawdbO0S7fbbVQRvkT0HPdsn1hbxqkVRu7-WjEHfh0fU_HTdrp7XgIOtd3UemEg9Vb54yOtJ7dT9pkhyMREYuF8KxntYRKAD4CjDpD1XE4AdO96lsRBex7UoqfNZEVTR-MDRTWkX1D1A8WM2M9PKRLFey-MNhNIQ1lmPFzVk3uRddxYKKf-cFP5hd2zULAOBvso5nUwMoKDS"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/80 glass-blur rounded chrome-hairline">
+<span class="font-product-code text-[10px] text-primary font-bold">HANDLES</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-product-code text-product-code text-outline-variant mb-1">DR037</span>
+<h3 class="font-label-sm text-label-sm text-on-surface leading-tight mb-3">Cylindrical Pull Bar</h3>
+<div class="mt-auto flex gap-1.5">
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#C7CDD2]" title="Chrome"></div>
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#1A1D21]" title="Matte Black"></div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl chrome-hairline overflow-hidden flex flex-col h-full group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A wide architectural shot of a minimalist, luxury glass shower enclosure in a contemporary bathroom with dark grey concrete walls and light-mode lighting. The glass is pristine and frameless, supported by subtle metallic clips. The scene is sophisticated and bright, highlighting the transparency and durability of the structural glass architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEOBj-2PAqkS60QDSV28NOiqIwraGL-x4uE1R6mFwKpU4gn94bH9Iqg3sfR-C-5Y_VyHSVQExyLkppw4NQCq0snrjbKnaqPt_JzzaNsHig7nEYOJP547-ljdhMg0o7KMID4Nez9-yA3hA9ngkLMRgzWdha4IIH7X4ieukAM4uQYx4UfaUKYm0ucRG27CpGRma7MgkKtgszgQ36ay72VOX8A7ohbNzB99frFJkI-gLOKJOIHDzRWrJBC2FLPUqaXu5LFQOaUscIP0MA"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/80 glass-blur rounded chrome-hairline">
+<span class="font-product-code text-[10px] text-primary font-bold">DOORS</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-product-code text-product-code text-outline-variant mb-1">ENC-09</span>
+<h3 class="font-label-sm text-label-sm text-on-surface leading-tight mb-3">Frameless Corner Set</h3>
+<div class="mt-auto flex gap-1.5">
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#C7CDD2]" title="Chrome"></div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-xl chrome-hairline overflow-hidden flex flex-col h-full group">
+<div class="aspect-square bg-surface-container relative overflow-hidden">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center p-8">
+<span class="material-symbols-outlined text-6xl text-outline-variant">category</span>
+</div>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/80 glass-blur rounded chrome-hairline">
+<span class="font-product-code text-[10px] text-primary font-bold">CLIPS</span>
+</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-product-code text-product-code text-outline-variant mb-1">CL-202</span>
+<h3 class="font-label-sm text-label-sm text-on-surface leading-tight mb-3">Heavy Duty Wall Clip</h3>
+<div class="mt-auto flex gap-1.5">
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#C7CDD2]" title="Chrome"></div>
+<div class="w-4 h-4 rounded-full border border-outline-variant bg-[#1A1D21]" title="Matte Black"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 rounded-full border border-primary text-primary font-label-sm text-label-sm active:scale-95 transition-all">
+                    LOAD MORE PRODUCTS
+                </button>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="bg-[#1A1D21] px-gutter py-16 flex flex-col gap-6 text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Looking for something custom?</h2>
+<p class="font-body-lg text-body-lg text-outline-variant">Let's start a project together and design your dream bathroom.</p>
+<button class="w-full py-4 rounded-full bg-[#2E7FA6] text-white font-label-sm text-label-sm uppercase tracking-widest active:scale-[0.98] transition-transform">
+                Get a Free Quote
+            </button>
+</section>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center py-section-gap-mobile px-gutter gap-8 text-center bg-secondary-fixed dark:bg-on-secondary-fixed-variant border-t border-outline-variant">
+<div class="font-headline-lg text-headline-lg text-on-secondary-fixed dark:text-secondary-fixed tracking-tighter">DIVERSITY SHOWERS</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Services</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-primary dark:text-inverse-primary transition-colors" href="#">Portfolio</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Projects</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-fixed-variant dark:text-outline-variant opacity-60">
+                © 2026 Diversity Showers LLC · Terms · Privacy
+            </div>
+</footer>
+</main>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('main-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Horizontal scroll animation for filters
+        const filterContainer = document.querySelector('.no-scrollbar');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        filterContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - filterContainer.offsetLeft;
+            scrollLeft = filterContainer.scrollLeft;
+        });
+        filterContainer.addEventListener('mouseleave', () => isDown = false);
+        filterContainer.addEventListener('mouseup', () => isDown = false);
+        filterContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - filterContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            filterContainer.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body></html>

@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "./PageHero.astro";
+
+type Props = {
+  title: string;
+  effective: string;
+  eyebrow?: string;
+};
+const { title, effective, eyebrow = "[ Legal ]" } = Astro.props;
+---
+
+<Layout title={`${title} — Diversity Showers`}>
+  <PageHero eyebrow={eyebrow} title={title} lead={`Effective Date: ${effective}`} />
+
+  <section class="bg-[var(--color-light)] py-16 md:py-24">
+    <div
+      class="legal-prose mx-auto max-w-[760px] px-5 md:px-10"
+    >
+      <slot />
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .legal-prose { color: var(--color-ink-muted); }
+  .legal-prose h2 {
+    color: var(--color-ink);
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .legal-prose h2:first-child { margin-top: 0; }
+  .legal-prose h3 {
+    color: var(--color-ink);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.5rem;
+  }
+  .legal-prose p { line-height: 1.7; margin: 0.75rem 0; font-size: 0.95rem; }
+  .legal-prose ul { margin: 0.75rem 0; padding-left: 1.25rem; list-style: disc; }
+  .legal-prose li { line-height: 1.7; margin: 0.35rem 0; font-size: 0.95rem; }
+  .legal-prose a { color: var(--color-water); text-decoration: underline; }
+  .legal-prose strong { color: var(--color-ink); font-weight: 600; }
+  .legal-prose hr { border: 0; border-top: 1px solid var(--color-chrome); margin: 2.5rem 0; }
+</style>

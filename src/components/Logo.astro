@@ -1,0 +1,37 @@
+---
+// Brand logo. The PNG artwork is dark on transparent, so on dark surfaces we
+// sit it on a soft light chip for legibility. `variant="bare"` skips the chip.
+type Props = {
+  variant?: "chip" | "bare";
+  class?: string;
+};
+const { variant = "chip", class: className = "" } = Astro.props;
+---
+
+<a
+  href="/"
+  class:list={["group inline-flex items-center gap-3", className]}
+  aria-label="Diversity Showers — home"
+>
+  <span
+    class:list={[
+      "inline-flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]",
+      variant === "chip"
+        ? "h-11 w-11 rounded-full bg-[var(--color-light)] p-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.12)]"
+        : "h-11 w-11",
+    ]}
+  >
+    <img
+      src="/images/logos/LOGO-PRINCIPAL.png"
+      alt="Diversity Showers"
+      width="44"
+      height="44"
+      class="h-full w-full object-contain"
+      loading="eager"
+      decoding="async"
+    />
+  </span>
+  <span class="font-mono text-[13px] font-bold uppercase leading-none tracking-[0.16em] text-[var(--color-bone)]">
+    Diversity <span class="text-[var(--color-bone-muted)]">Showers</span>
+  </span>
+</a>

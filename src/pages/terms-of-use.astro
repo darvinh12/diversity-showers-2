@@ -1,0 +1,68 @@
+---
+import LegalLayout from "../components/LegalLayout.astro";
+import { site } from "../lib/site";
+---
+
+<LegalLayout title="Terms of Use" effective="April 16, 2026">
+  <p>
+    Welcome to the Diversity Showers website. By accessing or using our services,
+    including our SMS messaging program, you agree to be bound by these Terms and
+    Conditions.
+  </p>
+
+  <h2>1. Services Description</h2>
+  <p>
+    Diversity Showers provides glass installation and shower remodeling services.
+    These terms govern your use of our website, service inquiries, and communication
+    channels.
+  </p>
+
+  <h2>2. SMS Messaging Program</h2>
+  <p>
+    By opting into our SMS program via our contact forms or other opt-in methods, you
+    agree to receive recurring text messages from Diversity Showers.
+  </p>
+  <ul>
+    <li><strong>Program Description:</strong> SMS notifications related to service updates, appointment reminders, special promotions, and project quotes.</li>
+    <li><strong>Message Frequency:</strong> Message frequency may vary based on your interactions with our services.</li>
+    <li><strong>Message and Data Rates:</strong> Standard message and data rates may apply, depending on your mobile carrier and plan.</li>
+    <li><strong>Support:</strong> Reply HELP to any message or contact us at {site.email} / {site.phones.office} for support.</li>
+    <li><strong>Opt-Out:</strong> Reply STOP to any message to opt out at any time. Once you opt out, you will no longer receive future messages.</li>
+    <li><strong>Carrier Liability:</strong> Carriers are not liable for delayed or undelivered messages.</li>
+  </ul>
+
+  <h2>3. Privacy</h2>
+  <p>
+    Your use of our services, including the SMS program, is also governed by our
+    <a href="/privacy-policy">Privacy Policy</a>. Please review it for details on how
+    your information is collected, used, and protected.
+  </p>
+
+  <h2>4. User Conduct</h2>
+  <p>
+    By using our website and services, you agree to provide accurate and truthful
+    information when submitting forms or signing up for our SMS program. You also agree
+    not to use our services for unlawful purposes or to send unsolicited messages.
+  </p>
+
+  <h2>5. Limitation of Liability</h2>
+  <p>
+    Diversity Showers shall not be liable for any indirect, incidental, or
+    consequential damages arising from the use of our services, including SMS
+    communications, beyond what is required by applicable law.
+  </p>
+
+  <h2>6. Governing Law</h2>
+  <p>
+    These terms are governed by the laws of the State of Texas, and any disputes
+    arising under these terms shall be resolved in the appropriate courts of Texas.
+  </p>
+
+  <h2>7. Contact Information</h2>
+  <p>
+    <strong>{site.legalName}</strong><br />
+    {site.address.line1}, {site.address.line2}, USA<br />
+    {site.email}<br />
+    {site.phones.office} · {site.phones.cell}
+  </p>
+</LegalLayout>

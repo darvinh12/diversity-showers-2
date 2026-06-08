@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Diversity Showers — Carpeta 2 · "Showroom Contrast"
+   Design system: Technical Elegance (Stitch)
+   ============================================================ */
+
+@theme {
+  /* — Surfaces — */
+  --color-charcoal: #1a1d21;        /* hero + dark bands (near-black, not pure) */
+  --color-charcoal-2: #20242a;      /* elevated charcoal cards */
+  --color-light: #f5f6f7;           /* primary light canvas */
+  --color-glass: #e9eef1;           /* glass-tint secondary fill */
+  --color-white: #ffffff;
+
+  /* — Ink — */
+  --color-ink: #1a1d21;             /* text on light */
+  --color-ink-muted: #5c6168;       /* muted on light */
+  --color-bone: #f5f6f7;            /* text on charcoal */
+  --color-bone-muted: #9aa3ab;      /* muted on charcoal */
+
+  /* — Chrome / metal — */
+  --color-chrome: #c7cdd2;          /* hairlines, dividers, swatches */
+  --color-chrome-soft: #dfe3e6;
+
+  /* — Accent (water-blue) — CTAs + links only — */
+  --color-water: #2e7fa6;
+  --color-water-deep: #23647f;
+  --color-water-bright: #3a93bd;
+
+  /* — States — */
+  --color-success: #1a7f4e;
+  --color-error: #ba1a1a;
+
+  /* — Fonts — */
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* — Radius — */
+  --radius-card: 1.25rem;   /* 20px */
+  --radius-sm: 0.75rem;     /* 12px */
+  --radius-input: 0.5rem;   /* 8px */
+
+  /* — Easings — */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-snap: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background: var(--color-charcoal);
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background: var(--color-light);
+    margin: 0;
+  }
+
+  ::selection {
+    background: var(--color-water);
+    color: #fff;
+  }
+
+  /* Deliberate focus ring (never outline:none without replacement) */
+  :focus-visible {
+    outline: 2px solid var(--color-water);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+}
+
+@layer components {
+  /* — Eyebrow label: [ OUR SERVICES ] — */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-water);
+  }
+  .eyebrow--muted { color: var(--color-ink-muted); }
+  .on-dark .eyebrow--muted, .eyebrow--bone { color: var(--color-bone-muted); }
+
+  /* — Mono product code — */
+  .code {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* — Buttons — */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0 1.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.18s var(--ease-out-quart),
+                color 0.18s var(--ease-out-quart),
+                border-color 0.18s var(--ease-out-quart),
+                transform 0.18s var(--ease-out-quart);
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--color-water);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--color-water-deep); }
+
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--color-chrome);
+    color: var(--color-ink);
+  }
+  .btn-ghost:hover { background: var(--color-glass); }
+
+  .btn-ghost-dark {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--color-bone);
+  }
+  .btn-ghost-dark:hover { background: rgba(255, 255, 255, 0.08); }
+
+  /* — Hairline divider — */
+  .hairline { border-color: var(--color-chrome); }
+}
+
+/* — Reveal-on-scroll initial state (GSAP toggles .is-in) — */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(0.985);
+  will-change: transform, opacity;
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

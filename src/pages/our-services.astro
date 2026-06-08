@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import Reveal from "../components/Reveal.astro";
+import { services } from "../data/services";
+import { serviceImage } from "../lib/service-images";
+
+const values = [
+  {
+    title: "Customer Focus",
+    body: "Our clients choose us for the ease of communication and our understanding of what they need to receive in the end.",
+  },
+  {
+    title: "Multi Experience",
+    body: "A wide range of services in various styles for both commercial and residential properties — each project gets a unique, professional touch.",
+  },
+  {
+    title: "Professionalism",
+    body: "A highly trained and experienced team focused on every detail, from the initial planning to the final installation.",
+  },
+  {
+    title: "Author's Supervision",
+    body: "We handle every aspect of the project, carefully selecting materials and manufacturers to ensure the highest quality and functionality.",
+  },
+];
+---
+
+<Layout
+  active="services"
+  title="Our Services — Diversity Showers"
+  description="Frameless and framed shower doors, mirrors, glass railings, commercial entry doors and office partitions across the DFW Metroplex."
+>
+  <PageHero
+    eyebrow="[ Our Benefits ]"
+    title="Innovative bathroom solutions with mastery and vision"
+    lead="From frameless showers to commercial glass — we design, manufacture and install custom glass solutions for residential and commercial spaces across North Texas."
+  >
+    <a href="/our-projects" class="btn btn-primary mt-8">View projects</a>
+  </PageHero>
+
+  <!-- Values -->
+  <section class="bg-[var(--color-light)] py-20 md:py-28">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          values.map((v) => (
+            <div
+              class="reveal flex flex-col rounded-[var(--radius-card)] border border-[var(--color-chrome)] bg-white p-7"
+              data-reveal-group="values"
+            >
+              <h3 class="text-lg font-semibold tracking-[-0.01em] text-[var(--color-ink)]">{v.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-ink-muted)]">{v.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="on-dark bg-[var(--color-charcoal)] py-20 text-[var(--color-bone)] md:py-28">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <div class="reveal max-w-2xl">
+        <span class="eyebrow">[ Our Services ]</span>
+        <h2 class="mt-5 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.08] tracking-[-0.03em]">
+          What we can offer
+        </h2>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          services.map((s) => (
+            <a
+              href={`/services/${s.slug}`}
+              class="reveal group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-white/10 bg-[var(--color-charcoal-2)] transition-colors duration-200 hover:border-[var(--color-water)]"
+              data-reveal-group="svc"
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-black/20">
+                <img
+                  src={serviceImage(s.slug)}
+                  alt={s.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h3 class="text-base font-semibold leading-snug tracking-[-0.01em]">{s.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-[var(--color-bone-muted)]">{s.short}</p>
+                <span class="mt-5 inline-flex items-center gap-2 pt-1 text-sm font-semibold text-[var(--color-water)]">
+                  Learn more
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete solutions -->
+  <section class="bg-[var(--color-light)] py-20 md:py-28">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <div class="reveal max-w-2xl">
+        <span class="eyebrow eyebrow--muted">[ Our Benefits ]</span>
+        <h2 class="mt-5 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[var(--color-ink)]">
+          Complete solutions for interiors and exteriors
+        </h2>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-ink-muted)] md:text-lg">
+          The core philosophy of Diversity Showers is to create individual and
+          aesthetically impressive solutions for our clients, employing rapid project
+          development that incorporates unique styles.
+        </p>
+      </div>
+
+      <div class="reveal mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
+        {
+          [
+            {
+              t: "Frameless Shower Doors",
+              d: "Frameless glass shower doors add a touch of luxury to any bathroom.",
+              href: "/services/frameless-shower-doors",
+            },
+            {
+              t: "Glass Railing Systems",
+              d: "Original, high-quality glass railing projects that raise the value of residential and commercial spaces.",
+              href: "/services/glass-railing-systems",
+            },
+          ].map((c) => (
+            <a
+              href={c.href}
+              class="group flex flex-col rounded-[var(--radius-card)] border border-[var(--color-chrome)] bg-white p-8 transition-colors hover:border-[var(--color-ink)]"
+            >
+              <h3 class="text-xl font-semibold tracking-[-0.01em] text-[var(--color-ink)]">{c.t}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-ink-muted)]">{c.d}</p>
+              <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-water)]">
+                Read more
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="reveal mt-12">
+        <a href="/contact" class="btn btn-primary">Start a project</a>
+      </div>
+    </div>
+  </section>
+
+  <Reveal />
+</Layout>

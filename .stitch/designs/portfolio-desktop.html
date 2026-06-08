@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | Diversity Showers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .chrome-hairline {
+            border: 1px solid #C7CDD2;
+        }
+        .dark-chrome-hairline {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#161c20",
+                        "primary-container": "#2a7ca3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#40484e",
+                        "on-primary-fixed": "#001e2c",
+                        "surface-variant": "#e1e3e4",
+                        "primary": "#006387",
+                        "outline": "#70787f",
+                        "background": "#f8f9fa",
+                        "primary-fixed-dim": "#86cffa",
+                        "surface-bright": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#bfc8cf",
+                        "secondary-fixed-dim": "#c1c7cc",
+                        "on-surface": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#dde3e8",
+                        "on-tertiary-fixed": "#191c20",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#c4e7ff",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#dde3e8",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary": "#595c61",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#5f656a",
+                        "surface-tint": "#00658b",
+                        "on-primary-container": "#fcfcff",
+                        "tertiary-fixed": "#e1e2e8",
+                        "secondary": "#595f64",
+                        "on-secondary-fixed-variant": "#41484c",
+                        "surface": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c5c6cc",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed-variant": "#44474b",
+                        "on-background": "#191c1d",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#727579",
+                        "on-primary-fixed-variant": "#004c69",
+                        "inverse-primary": "#86cffa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "charcoal": "#1A1D21",
+                        "off-white": "#F5F6F7",
+                        "metallic": "#C7CDD2",
+                        "water-blue": "#2E7FA6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-gap-desktop": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "section-gap-mobile": "64px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "product-code": ["Space Mono"],
+                        "eyebrow-mono": ["Space Mono"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "product-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "eyebrow-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop py-4 max-w-full">
+<div class="flex items-center gap-8 max-w-container-max mx-auto w-full">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface dark:text-inverse-on-surface">
+                DIVERSITY SHOWERS
+            </div>
+<nav class="hidden md:flex items-center gap-8 ml-auto">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Our Services</a>
+<a class="font-body-md text-body-md text-primary dark:text-inverse-primary font-bold border-b-2 border-primary hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Our Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">FAQ</a>
+</nav>
+<button class="ml-8 px-6 py-2.5 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:opacity-90 transition-all active:scale-95">
+                Start a project
+            </button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="bg-charcoal text-white pt-section-gap-desktop pb-section-gap-desktop px-margin-desktop overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="grid grid-cols-6 h-full w-full">
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col gap-6 max-w-2xl">
+<span class="font-eyebrow-mono text-eyebrow-mono text-primary-fixed-dim uppercase tracking-[0.2em]">[ OUR PORTFOLIO ]</span>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg leading-none">Some of our works and case studies for clients</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-lg">Give a special touch to your bathroom with our premium architectural hardware and custom frameless glass solutions.</p>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="sticky top-[72px] z-40 bg-surface border-b border-outline-variant/30 py-6 px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 bg-water-blue text-white rounded-full font-label-sm text-label-sm transition-all shadow-lg shadow-water-blue/20">All</button>
+<button class="px-6 py-2 border border-metallic text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-secondary-container/30 transition-all">Handles</button>
+<button class="px-6 py-2 border border-metallic text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-secondary-container/30 transition-all">Clips &amp; Clamps</button>
+<button class="px-6 py-2 border border-metallic text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-secondary-container/30 transition-all">Doors</button>
+<button class="px-6 py-2 border border-metallic text-on-surface-variant rounded-full font-label-sm text-label-sm hover:bg-secondary-container/30 transition-all">Hinges</button>
+</div>
+<div class="font-eyebrow-mono text-eyebrow-mono text-on-surface-variant opacity-60">
+                    12 ITEMS
+                </div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="bg-off-white py-section-gap-desktop px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1: Hinge -->
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img alt="Heavy duty hinge" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLuQXGuWJyPGzkqVw27B7gJij7yKjTNN-uAVjpcgX1SqsQtg6EiEI3da-Uy8FTubZLhE8U8253SVIQMlMoAYm6KUOfM9DtzSy1mCNFcLrt48T0mm4UoUqW06sWlLhRKTjrbb6IuD2xAsC0gCqXQNYjZPH59fDG8zsxSNTJI9tC8wlVkVtG6pqiufW0Q3SPZKga8e8cKyoiQOfXoy0mPnH9aTN_ekdICQKzIGRjKOkof0U_t7W4vYCjEYOPA"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Hinges</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Standard Hinge</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Wall-to-Glass Hinge</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DR037</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#E5E4E2]" title="Brushed Nickel"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#28282B]" title="Matte Black"></span>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Handle -->
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img alt="Brushed chrome handle" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLtHr-iO4PcRVwu7uMSu3QENW2MUoDwEJNtvtSXotkjM-bxkGwA3f8XaEmjyqQdSVl_2vEM_piPIoCec-ftjUHVPwll6PGByemtVnaMcRjiuZdRxxxJsj6_6gVJmaYK6iSNG9Lawd_rkAiF7GOeAUhKUrtUCjS8ifPX-0ZsSthVA8-fMgNYfmO6pkd6oeJwzceZlGy77XKr-1F0YQC6lr46pqcEfQlP70rFoq45dRFPXJ72tWYie-WnmxW0"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Handles</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Ladder Pull</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Dual-Sided Handle</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DP8</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#E5E4E2]" title="Brushed Nickel"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#7B4A35]" title="Oil Rubbed Bronze"></span>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Clip -->
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" data-alt="A macro studio photograph of a polished chrome rectangular glass clamp used for shower doors. The metal surface reflects a clean architectural studio environment. The clamp is presented with clinical precision against a solid light gray background, highlighting its sharp industrial lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf8OHo_MJKV8cl2xA3TCuqfcrK6F_LJjDf5gv_y_J6AH6PybHSF-cmjEipBGCe9TvPoTFxcVJkMlspZUln7mcNNv9joPxXi1zEw-7bjnGsnAVmjbW6G9YikW-3fD0MwBEmN5Zg9rwoqrkbgu1aiOIAGo3KTOGuxxGmWGBldGHX3L02ECOMDuOzJyBjdR8Uaj1XjSq2qmwMn3Lh2lKnYovHvJ-oEEZI2CXeJnXhsgYmydQKLP-F5TYDzYiv6Cp4s7qdBbViV_8llp7W"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Clips &amp; Clamps</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Square Clamp</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Glass Fixed Panel Clip</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DRSQ01</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#28282B]" title="Matte Black"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#D4AF37]" title="Brushed Bronze"></span>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Door -->
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide architectural shot of a luxury frameless glass shower enclosure within a master bathroom. The design features minimalist hardware and thick tempered glass. Soft natural morning light filters through a nearby window, illuminating the water droplets on the glass. The aesthetic is clean, modern, and high-end showroom quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUUc2sX5ZXXLXuzuOm6K126S0WUcu4iguia3PTVEWnmaepr1xLPc3IVT39KgzU7d0WMA68voWYVYlEh0CYj_9iNDWF3YcDghhZxHltVSuCLRUqT5okaUXJaXuUI3qWcpFE5JX6YaCVkMBfyBjlLB-GVpU5LhSoUu5jaWnoAIWhXfDWL8dc2iG7357syhCA4yDCcmIm24-xptqVe66ksrBMaaKq8QHVVuTRf1YZ8kBTxEhS2c-ZIJ2dxuWdp629YF_j_kNqoAAyMy3-"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-charcoal text-white rounded-full font-eyebrow-mono text-[10px] uppercase">Doors</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Enclosure</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Catalina Series</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">CATALINA</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#28282B]" title="Matte Black"></span>
+</div>
+</div>
+</div>
+<!-- Additional Grid Items to simulate full catalog -->
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img alt="180 degree hinge" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 grayscale brightness-110" src="https://lh3.googleusercontent.com/aida/AP1WRLuQXGuWJyPGzkqVw27B7gJij7yKjTNN-uAVjpcgX1SqsQtg6EiEI3da-Uy8FTubZLhE8U8253SVIQMlMoAYm6KUOfM9DtzSy1mCNFcLrt48T0mm4UoUqW06sWlLhRKTjrbb6IuD2xAsC0gCqXQNYjZPH59fDG8zsxSNTJI9tC8wlVkVtG6pqiufW0Q3SPZKga8e8cKyoiQOfXoy0mPnH9aTN_ekdICQKzIGRjKOkof0U_t7W4vYCjEYOPA"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Hinges</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Pivot Hinge</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Glass-to-Glass 180°</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DRH180</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#28282B]" title="Matte Black"></span>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" data-alt="A macro studio shot of a square-profile architectural pull handle for a glass door, rendered in a sophisticated matte black finish. The lighting is low-key and dramatic, accentuating the crisp 90-degree angles and the velvety texture of the metal. The handle stands out as a statement of minimalist luxury against a neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhCND-iYoDlBYUF6R2ktzyLTsRNASSYb0_GTtJGCnhgx9zZEZT8MYYtpFfcXUUmuX2BPAsCLo5SCE6gqt5gbYF3A-EXEHJYveA-hkjOkOoOzKDa2LhWG0sV_Ukk-SMZ6RWPDf3aROjoRUd3WwN0YY5_qkgEZPA7G51x9akjWH5lg5_DEy4qPlwIVb3i6UcsS4sKkMp37pvaesTyQo6CFFFfOCr3ZsXFVYEkghTi4-riz6W-8map8oT5dqriHNNPOiLIE-HMtEFTSOj"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Handles</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Square Pull</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Minimalist Square 8"</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DSQ8</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#28282B]" title="Matte Black"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" data-alt="A high-end architectural detail showing a heavy-duty chrome 90-degree glass clamp installed on a frameless shower panel. The metal finish is impeccably polished, showing sharp architectural reflections. The clamp holds a pane of crystal-clear tempered glass, conveying structural strength and high-end craftsmanship in a modern bathroom setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCisd0ABMqu3Y2TktRIi6uBRwmoNeNG3YMIuPLSuQOo2Ng1y3dz05S82aGZvw-b8vlpnIN8Xuo8OkEg7DNuukE-mqMfgAa9mIA1nV2k2AzI-wBTkRFn-qDUMGTmowJTGu50r-bI0DA36HcqovTAPtHRBiIr9eWzLhuuYRvYQcwgtXzcTQD7rZhC8MUbxIjc1lk1RHukL8xwYWm3SNRpAKkV4eNXYNTUA5MAGsixEvsNK-nYth1sZZsd4iACo_bmSQk3cxqBgnuTzHDV"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Clips &amp; Clamps</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Corner Clip</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">90° Glass Offset</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DSO90</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#E5E4E2]" title="Brushed Nickel"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl chrome-hairline overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-charcoal/5">
+<div class="aspect-square overflow-hidden bg-white flex items-center justify-center p-8 relative">
+<img alt="Square heavy duty hinge" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 brightness-95 contrast-125" src="https://lh3.googleusercontent.com/aida/AP1WRLuQXGuWJyPGzkqVw27B7gJij7yKjTNN-uAVjpcgX1SqsQtg6EiEI3da-Uy8FTubZLhE8U8253SVIQMlMoAYm6KUOfM9DtzSy1mCNFcLrt48T0mm4UoUqW06sWlLhRKTjrbb6IuD2xAsC0gCqXQNYjZPH59fDG8zsxSNTJI9tC8wlVkVtG6pqiufW0Q3SPZKga8e8cKyoiQOfXoy0mPnH9aTN_ekdICQKzIGRjKOkof0U_t7W4vYCjEYOPA"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-surface-container rounded-full font-eyebrow-mono text-[10px] uppercase text-on-surface-variant">Hinges</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Square Series</h3>
+<p class="font-headline-lg-mobile text-[18px] text-on-surface">Premium Wall-to-Glass</p>
+</div>
+<span class="font-product-code text-product-code text-on-surface-variant bg-surface-container-low px-2 py-1 inline-block w-fit rounded">DSQ037</span>
+<div class="flex gap-2 mt-2">
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#C0C0C0]" title="Chrome"></span>
+<span class="w-4 h-4 rounded-full border border-metallic bg-[#7B4A35]" title="Oil Rubbed Bronze"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-section-gap-mobile flex justify-center">
+<button class="px-10 py-4 border border-metallic rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-all flex items-center gap-2 group">
+                        Load More Products
+                        <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="bg-charcoal py-section-gap-desktop px-margin-desktop overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-water-blue/10 blur-[100px] pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 bg-white/5 p-12 rounded-2xl dark-chrome-hairline glass-card">
+<div class="flex flex-col gap-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white">Looking for something custom?</h2>
+<p class="font-body-lg text-body-lg text-surface-variant">We specialize in bespoke architectural glass and custom hardware finishes.</p>
+</div>
+<button class="px-10 py-5 bg-water-blue text-white rounded-full font-headline-lg-mobile text-[20px] font-bold hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-water-blue/30 whitespace-nowrap">
+                        Start a project
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-dim pt-section-gap-desktop pb-12 px-margin-desktop text-surface-variant">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-section-gap-mobile">
+<div class="flex flex-col gap-6">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest font-bold tracking-tighter">
+                        DIVERSITY SHOWERS
+                    </div>
+<p class="font-body-md text-body-md opacity-80 max-w-xs">Elevating architectural spaces through transparency, durability, and light since 2012.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">Platform</h4>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Our Services</a>
+<a class="text-primary-fixed font-bold" href="#">Portfolio</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Our Projects</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">Connect</h4>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Facebook</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">Legal</h4>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
+<p>© 2024 Diversity Showers. All rights reserved.</p>
+<div class="flex gap-6">
+<span>A Division of Modern Architecture Group</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed on Portfolio/Catalog per rules, but included for system compliance if intent were different) -->
+<!-- Determined as Suppressed for this view -->
+<script>
+        // Micro-interaction for hover effects on hardware finish swatches
+        document.querySelectorAll('.rounded-full[title]').forEach(swatch => {
+            swatch.addEventListener('mouseover', () => {
+                swatch.style.transform = 'scale(1.2)';
+            });
+            swatch.addEventListener('mouseout', () => {
+                swatch.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-500');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

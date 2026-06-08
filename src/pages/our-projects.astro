@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import Reveal from "../components/Reveal.astro";
+
+const projects = [
+  { img: "/images/paginas/home/modern-bathroom-with-small-space-contemporary-decor.jpg", title: "Frameless enclosure", tag: "Residential" },
+  { img: "/images/paginas/home/small-bathroom-decorated-modern-style.jpg", title: "Walk-in glass shower", tag: "Residential" },
+  { img: "/images/paginas/servicios/shower-box-scaled.webp", title: "Custom shower box", tag: "Residential" },
+  { img: "/images/paginas/home/modern-style-small-bathroom-with-furnishings_23-2150836549.jpg", title: "Glass partition", tag: "Residential" },
+  { img: "/images/paginas/servicios/tidy-bathroom-with-shiny-tiles.webp", title: "Mirror & glass wall", tag: "Mirrors" },
+  { img: "/images/paginas/home/bathroom_74190-5756.jpg", title: "Tile-to-glass meeting", tag: "Detail" },
+  { img: "/images/paginas/servicios/bathroom-8368662_1920.webp", title: "Railing system", tag: "Railings" },
+  { img: "/images/paginas/home/small-bathroom-with-modern-style-ai-generated.jpg", title: "Compact frameless", tag: "Residential" },
+  { img: "/images/paginas/servicios/small-bathroom-with-modern-style-decor.webp", title: "Modern remodel", tag: "Residential" },
+];
+---
+
+<Layout
+  active="projects"
+  title="Our Projects — Diversity Showers"
+  description="High-quality glass for creating unique spaces. Discover our projects and transform your environment."
+>
+  <PageHero
+    eyebrow="[ Our Projects ]"
+    title="High-quality glass for creating unique spaces"
+    lead="Discover our projects and transform your environment — frameless showers, mirrors and railings installed across the DFW Metroplex."
+  />
+
+  <section class="bg-[var(--color-light)] py-16 md:py-24">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          projects.map((p) => (
+            <figure
+              class="reveal group relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-chrome)]"
+              data-reveal-group="projects"
+            >
+              <img
+                src={p.img}
+                alt={p.title}
+                loading="lazy"
+                decoding="async"
+                class="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+              />
+              <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-[rgba(26,29,33,0.85)] to-transparent p-5">
+                <span class="text-base font-semibold text-white">{p.title}</span>
+                <span class="code rounded-full bg-white/15 px-2.5 py-1 text-[11px] text-white backdrop-blur-sm">{p.tag}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="on-dark bg-[var(--color-charcoal)] py-20 text-[var(--color-bone)] md:py-24">
+    <div class="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center md:px-10">
+      <h2 class="max-w-xl text-2xl font-bold tracking-[-0.02em] md:text-3xl">
+        Have a space in mind? Let's build it in glass.
+      </h2>
+      <a href="/contact" class="btn btn-primary shrink-0">Start a project</a>
+    </div>
+  </section>
+
+  <Reveal />
+</Layout>

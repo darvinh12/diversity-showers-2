@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=390, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Diversity Showers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#edeeef",
+                    "on-tertiary-fixed-variant": "#44474b",
+                    "on-background": "#191c1d",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c5c6cc",
+                    "tertiary-fixed": "#e1e2e8",
+                    "secondary": "#595f64",
+                    "on-secondary-fixed-variant": "#41484c",
+                    "surface": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "inverse-primary": "#86cffa",
+                    "tertiary-container": "#727579",
+                    "on-primary-fixed-variant": "#004c69",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-fixed": "#c4e7ff",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#dde3e8",
+                    "surface-tint": "#00658b",
+                    "on-primary-container": "#fcfcff",
+                    "on-secondary-container": "#5f656a",
+                    "surface-container-highest": "#e1e3e4",
+                    "tertiary": "#595c61",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c1c7cc",
+                    "on-surface": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "outline-variant": "#bfc8cf",
+                    "surface-bright": "#f8f9fa",
+                    "primary-fixed-dim": "#86cffa",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#dde3e8",
+                    "on-tertiary-fixed": "#191c20",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2a7ca3",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#161c20",
+                    "background": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "primary": "#006387",
+                    "outline": "#70787f",
+                    "on-surface-variant": "#40484e",
+                    "on-primary-fixed": "#001e2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "section-gap-mobile": "64px",
+                    "section-gap-desktop": "120px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "product-code": ["Space Mono"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "eyebrow-mono": ["Space Mono"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "product-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "eyebrow-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass-header { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .chrome-border { border: 1px solid #C7CDD2; }
+        .metallic-hairline { border: 1px solid rgba(199, 205, 210, 0.3); }
+        .dark-chrome-hairline { border: 1px solid rgba(255, 255, 255, 0.1); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 glass-header border-b border-outline-variant/30 flex items-center justify-between px-gutter h-16">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-surface">DIVERSITY SHOWERS</h1>
+<button aria-label="Menu" class="p-2 hover:bg-surface-container-low/50 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</header>
+<main class="pt-16">
+<!-- Section 1: Page Hero -->
+<section class="bg-[#1A1D21] text-white px-gutter py-12 flex flex-col gap-4">
+<span class="font-eyebrow-mono text-eyebrow-mono text-outline-variant uppercase">[ GET IN TOUCH ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile leading-tight">Let's start a project</h2>
+<p class="font-body-md text-body-md text-outline-variant max-w-xs">
+                Give us a call or drop by anytime — we answer all enquiries within 24 hours on business days.
+            </p>
+</section>
+<!-- Section 2: Contact Form -->
+<section class="bg-[#F5F6F7] px-gutter py-12">
+<div class="bg-white rounded-lg chrome-border p-6 shadow-sm">
+<h3 class="font-headline-lg-mobile text-[24px] mb-8 text-on-surface">Get in touch</h3>
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-on-surface-variant">Your name</label>
+<input class="w-full chrome-border rounded-lg h-12 px-4 focus:ring-2 focus:ring-[#2E7FA6] focus:border-[#2E7FA6] outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-on-surface-variant">Your email</label>
+<input class="w-full chrome-border rounded-lg h-12 px-4 focus:ring-2 focus:ring-[#2E7FA6] focus:border-[#2E7FA6] outline-none transition-all" placeholder="john@example.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-on-surface-variant">Service interested in</label>
+<select class="w-full chrome-border rounded-lg h-12 px-4 focus:ring-2 focus:ring-[#2E7FA6] focus:border-[#2E7FA6] outline-none transition-all appearance-none bg-white">
+<option>Frameless Shower Doors</option>
+<option>Framed Shower Doors</option>
+<option>Wall Mirrors</option>
+<option>Glass Railing Systems</option>
+<option>Commercial Entry Doors</option>
+<option>Office Glass Partitions</option>
+<option>Commercial Glass</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-on-surface-variant">Tell us how we can help you (optional)</label>
+<textarea class="w-full chrome-border rounded-lg p-4 focus:ring-2 focus:ring-[#2E7FA6] focus:border-[#2E7FA6] outline-none transition-all resize-none" placeholder="Describe your project requirements..." rows="4"></textarea>
+</div>
+<button class="w-full h-12 bg-primary-container text-white rounded-full font-label-sm flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all mt-2">
+                        Send message
+                        <span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<p class="text-[11px] text-outline text-center leading-relaxed">
+                        This site is protected by reCAPTCHA and the Google <br/>
+<a class="underline" href="#">Privacy Policy</a> and <a class="underline" href="#">Terms of Service</a> apply.
+                    </p>
+</form>
+</div>
+</section>
+<!-- Section 3: Contact Details -->
+<section class="bg-[#1A1D21] text-white px-gutter py-12">
+<span class="font-eyebrow-mono text-eyebrow-mono text-outline-variant uppercase block mb-8">[ OUR CONTACT DETAILS ]</span>
+<div class="flex flex-col gap-8">
+<!-- Address -->
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim">location_on</span>
+<div>
+<span class="font-eyebrow-mono text-[10px] text-outline-variant block mb-1">OUR ADDRESS</span>
+<p class="font-body-md text-body-md">1711 Briercroft Ct #140,<br/>Carrollton, TX 75006</p>
+</div>
+</div>
+<!-- Mail -->
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
+<div>
+<span class="font-eyebrow-mono text-[10px] text-outline-variant block mb-1">OUR MAILBOX</span>
+<p class="font-body-md text-body-md">info@diversityshowers.com</p>
+</div>
+</div>
+<!-- Office -->
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim">phone</span>
+<div>
+<span class="font-eyebrow-mono text-[10px] text-outline-variant block mb-1">OFFICE</span>
+<p class="font-body-md text-body-md">+1 214 731 6421</p>
+</div>
+</div>
+<!-- Cell -->
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim">smartphone</span>
+<div>
+<span class="font-eyebrow-mono text-[10px] text-outline-variant block mb-1">CELL</span>
+<p class="font-body-md text-body-md">+1 469 491 6057</p>
+</div>
+</div>
+<!-- Hours -->
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim">schedule</span>
+<div>
+<span class="font-eyebrow-mono text-[10px] text-outline-variant block mb-1">HOURS</span>
+<p class="font-body-md text-body-md">Mon–Fri 7:30–4:00, Sat 8:00–11:00,<br/>Sun closed.</p>
+</div>
+</div>
+</div>
+<!-- Social Links -->
+<div class="flex gap-6 mt-12 pt-8 border-t dark-chrome-hairline justify-center">
+<a class="w-10 h-10 flex items-center justify-center rounded-full border dark-chrome-hairline hover:bg-white/10 transition-colors" href="#">
+<img alt="LinkedIn" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARYopx_88rvqnJsUc6A5irVwXUZEryoIPO_vnccLJmlWO0OiFcU_3z2EPv8-CUzcxeEqGt1t2HK5Hb6OZK-EP1-jlhqNxsbBKDhOZ3T41uPAeoYaGnUMMIA0an6Ro8jOXTQuKNLrA5UG6yK28nzmuz82ST5lqD8fLVb03yl3eWuizUs2B38rtKfIrEnUJko9VZ4Y5hNhzhd6_Q2mQAD3j_ULIjLEJrwKdepiBDyjmzf2GSIyL_-A_cxkIb_tdyUu3jTTuLL2PahghV"/>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full border dark-chrome-hairline hover:bg-white/10 transition-colors" href="#">
+<img alt="Instagram" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtsPoncfZKWE0BxXvYDORiQrIqwvS8VjJOZW8ayRiuU0fnc_nnXy5a3wHZnUAsS9lepZ65yCxXj13KcUfmX1SapmzmQujFH-vYCsIgSL4skw8lQK3pz7s6wEj5ehB3HrDJfDqH7oWjNjKyvzcosW4Bb4ntRZhHesnJkHHApIDvTeYIjlWlr0hPweg4TiuqUCjim6IRb5Q7gc9t0EYItBqsAzLaub_AmfEriyZcKiLmKArnksP1fXALc4sgGCv-fR8GLZpwLyFzUKLp"/>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full border dark-chrome-hairline hover:bg-white/10 transition-colors" href="#">
+<img alt="Facebook" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLxOqy87XLooo1bEUJModIhrODi_LoEQ39uyIfyEF9UHhLVbbpAeXANWID--358C78IPrz6bMuHv9Ww3kPSAz9m9sRCQ2JEC516oXRgbHYC7zwWNRxhwT2BczaGtg7H-FUDKUbgRfa5vOY4X7ysk-q3F4VXzQy3aEia5HH8skLdlsKvxMVggateuxSHq4uC94QS9SlI4uvWolPfruig4hKh5jMq52dEhtNlTfyhlLN22vgdLxG6zC1oSBBzeEQtXZJs5gqkzGAhFH_"/>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full border dark-chrome-hairline hover:bg-white/10 transition-colors" href="#">
+<img alt="Pinterest" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlK0zDqsHF1PiztgncRXX2P7iOM8bWYTmrWYTVwQCSNJmUDS_boYZWAAN1JrGXSoK5GDA6pwGphU-vYbQcM47CU4wuvPnL_Td34O8NNOk_wAKTr3yDg6eU5AC9jO-NpOxwtyuW8kneLqNMm6hBUr7aWpCNS90UpF--UU2uBZODLTMKz_su5HTeF3VdSBtsttEDm08Pv35LDvSsjEylLzT_bTLuLBRFusVRdKDzJPupIvNGHCGBM08OlCuJ6cEoFYgV9PKbMg62_bR9"/>
+</a>
+</div>
+</section>
+<!-- Section 4: Map -->
+<section class="bg-[#F5F6F7] px-gutter py-12">
+<div class="relative w-full aspect-video rounded-xl chrome-border overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A professional, clean map visualization of Carrollton, Texas area with a custom technical aesthetic. The map features a minimalist charcoal and metallic color palette with fine hairline roads and a prominent architectural-style pin marking the office location. High-end glass showroom vibe with subtle blue navigation paths." data-location="Carrollton, Texas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB72QGNyJ2Ecw4O3lJ4BqX5JBvqzwGH33fKEhBULnPRHnrdG1rSxnnLBGMZYj0kfLZP0AA3l_1S9i33OTSzFZzoFWWTAjynNIpXW_2NakpCmTY1fS_ARA7yfjOB-vBBqP3QL5ISBOmG3vc5AVL4c6N_Ik4mzZ9O5P5DX2dIfq0RLXWvpCJ-AfnGyAAwDtOCTAra7sDPeMRHCiPmSeelHegdhv4NzN3z5xEi7jRPeW8FqnasVjMtON2sVwxDHfg0hSdwjy0CeTrJyEvU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-3 rounded-full shadow-lg border-2 border-white animate-bounce">
+<span class="material-symbols-outlined text-white text-[32px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-secondary-fixed border-t border-outline-variant flex flex-col items-center py-10 px-gutter gap-8 text-center">
+<div class="font-headline-lg text-on-secondary-fixed">DIVERSITY SHOWERS</div>
+<nav class="flex gap-6 flex-wrap justify-center font-label-sm text-on-secondary-fixed-variant uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Services</a>
+<a class="hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="hover:text-primary transition-colors" href="#">Projects</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="font-label-sm text-on-secondary-fixed-variant opacity-80 tracking-widest">
+            © 2026 Diversity Showers LLC · Terms · Privacy
+        </div>
+</footer>
+</body></html>

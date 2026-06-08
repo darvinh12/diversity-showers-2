@@ -1,0 +1,117 @@
+---
+import Logo from "./Logo.astro";
+
+type Props = { active?: string };
+const { active = "" } = Astro.props;
+
+const nav = [
+  { label: "Our Services", href: "/our-services", key: "services" },
+  { label: "Portfolio", href: "/portfolio", key: "portfolio" },
+  { label: "Our Projects", href: "/our-projects", key: "projects" },
+  { label: "FAQ", href: "/faq", key: "faq" },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+  data-scrolled="false"
+>
+  <div
+    class="absolute inset-0 -z-10 border-b border-white/0 bg-[var(--color-charcoal)]/0 backdrop-blur-0 transition-all duration-300"
+    id="header-bg"
+  >
+  </div>
+
+  <nav class="mx-auto flex h-20 max-w-[1280px] items-center justify-between gap-6 px-5 md:px-10">
+    <!-- Logo -->
+    <Logo />
+
+    <!-- Desktop nav -->
+    <ul class="hidden items-center gap-8 lg:flex">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                "relative text-sm transition-colors duration-200 hover:text-[var(--color-bone)]",
+                active === item.key ? "text-[var(--color-bone)]" : "text-[var(--color-bone-muted)]",
+              ]}
+            >
+              {item.label}
+              {active === item.key && (
+                <span class="absolute -bottom-1.5 left-0 h-px w-full bg-[var(--color-water)]" />
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Desktop CTA -->
+    <a href="/contact" class="btn btn-primary hidden lg:inline-flex">Start a project</a>
+
+    <!-- Mobile toggle -->
+    <button
+      id="menu-toggle"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-[var(--color-bone)] lg:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      <svg id="icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-white/10 bg-[var(--color-charcoal)]/95 backdrop-blur-xl lg:hidden"
+  >
+    <ul class="mx-auto flex max-w-[1280px] flex-col gap-1 px-5 py-4">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="flex min-h-[48px] items-center text-base text-[var(--color-bone)]"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="pt-3">
+        <a href="/contact" class="btn btn-primary w-full">Start a project</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header");
+  const bg = document.getElementById("header-bg");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  const applyScrolled = () => {
+    const scrolled = window.scrollY > 24;
+    if (!bg) return;
+    bg.classList.toggle("bg-[var(--color-charcoal)]/80", scrolled);
+    bg.classList.toggle("backdrop-blur-xl", scrolled);
+    bg.classList.toggle("border-white/10", scrolled);
+  };
+  applyScrolled();
+  window.addEventListener("scroll", applyScrolled, { passive: true });
+
+  toggle?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(open));
+    iconOpen?.classList.toggle("hidden", open);
+    iconClose?.classList.toggle("hidden", !open);
+  });
+</script>

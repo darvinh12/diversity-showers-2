@@ -1,0 +1,92 @@
+---
+import LegalLayout from "../components/LegalLayout.astro";
+import { site } from "../lib/site";
+---
+
+<LegalLayout title="Privacy Policy" effective="July 19, 2025">
+  <h2>Data Controller</h2>
+  <p>
+    <strong>{site.legalName}</strong><br />
+    {site.address.line1}<br />
+    {site.address.line2}<br />
+    United States<br />
+    {site.email} · {site.phones.office} · {site.phones.cell}
+  </p>
+  <p>
+    {site.legalName} is the data controller responsible for processing personal data
+    collected through this website.
+  </p>
+
+  <h2>Scope</h2>
+  <p>
+    This Privacy Policy explains how we collect, use, disclose, protect, and retain
+    personal data submitted through our website, particularly via our contact forms.
+  </p>
+
+  <h2>Information We Collect</h2>
+  <h3>1. Personal Information</h3>
+  <ul>
+    <li>Full name</li>
+    <li>Email address</li>
+    <li>Phone number</li>
+    <li>Message content</li>
+  </ul>
+  <h3>2. Usage Data</h3>
+  <ul>
+    <li>IP address, browser type and version, device information</li>
+    <li>Pages visited and time spent, date and time of access, referring URLs</li>
+    <li>Analytics information</li>
+  </ul>
+  <h3>3. Cookies and Tracking Technologies</h3>
+  <p>We use cookies for website functionality, improving user experience, analyzing site traffic and performance, and saving user preferences.</p>
+
+  <h2>How We Use Your Information</h2>
+  <ul>
+    <li>Respond to inquiries and contact form submissions</li>
+    <li>Provide customer support and information about our services</li>
+    <li>Improve our website and services</li>
+    <li>Analyze website usage and trends</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+  <p><strong>We do not use your personal information for third-party marketing purposes.</strong></p>
+
+  <h2>Legal Basis for Processing</h2>
+  <ul>
+    <li><strong>Consent:</strong> when you submit forms or contact us</li>
+    <li><strong>Legitimate interest:</strong> to improve our services and website</li>
+    <li><strong>Legal obligations:</strong> to comply with applicable laws</li>
+  </ul>
+
+  <h2>Sharing and Disclosure</h2>
+  <p>We do not sell, rent, or trade your personal information. <strong>We do not share or disclose consumer data or opt-in information to third parties for marketing or promotional purposes.</strong></p>
+  <p>We may share information with service providers (hosting, IT, analytics under confidentiality agreements), as required by law, or to protect our rights, property, or safety.</p>
+
+  <h2>Data Retention</h2>
+  <p>We retain personal data only as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations, resolve disputes, and enforce our agreements.</p>
+
+  <h2>Data Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+  <h2>Your Rights</h2>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request correction or deletion of your data</li>
+    <li>Restrict or object to certain processing</li>
+    <li>Withdraw consent at any time</li>
+    <li>Lodge a complaint with a data protection authority</li>
+  </ul>
+  <p>To exercise these rights, contact us at <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from minors.</p>
+
+  <h2>Policy Updates</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Updates will be posted on this page with a revised effective date.</p>
+
+  <h2>Contact Us</h2>
+  <p>
+    <strong>{site.legalName}</strong><br />
+    {site.address.line1}, {site.address.line2}, USA<br />
+    {site.email} · {site.phones.office} · {site.phones.cell}
+  </p>
+</LegalLayout>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Diversity Showers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#fcfcff",
+                        "on-surface-variant": "#40484e",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#595c61",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#86cffa",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dde3e8",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "surface": "#f8f9fa",
+                        "on-secondary-container": "#5f656a",
+                        "on-primary-fixed": "#001e2c",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#44474b",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#00658b",
+                        "tertiary-fixed-dim": "#c5c6cc",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#161c20",
+                        "tertiary-container": "#727579",
+                        "secondary": "#595f64",
+                        "secondary-container": "#dde3e8",
+                        "primary-container": "#2a7ca3",
+                        "primary-fixed": "#c4e7ff",
+                        "on-primary-fixed-variant": "#004c69",
+                        "on-tertiary-container": "#fdfcff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#e1e2e8",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#41484c",
+                        "outline": "#70787f",
+                        "secondary-fixed-dim": "#c1c7cc",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#86cffa",
+                        "primary": "#006387",
+                        "outline-variant": "#bfc8cf",
+                        "on-tertiary-fixed": "#191c20",
+                        "inverse-surface": "#1A1D21",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "section-gap-mobile": "64px",
+                        "section-gap-desktop": "120px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "eyebrow-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "product-code": ["Space Mono"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "600"}],
+                        "eyebrow-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "product-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .chrome-border {
+            border: 1px solid #C7CDD2;
+        }
+        .hairline-dark {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item[open] .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface dark:text-inverse-on-surface">
+            DIVERSITY SHOWERS
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Our Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Our Projects</a>
+<a class="font-body-md text-body-md text-primary dark:text-inverse-primary font-bold border-b-2 border-primary transition-colors" href="#">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-sm text-label-sm active:opacity-80 transition-all duration-200">
+            Start a project
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="bg-inverse-surface text-on-primary-container pt-32 pb-section-gap-desktop px-margin-desktop relative overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<img alt="" class="w-full h-full object-cover" data-alt="A macro photograph of high-end architectural glass panels with subtle metallic reflections. The lighting is cold and sophisticated, emphasizing the precision-cut edges and the crystal-clear transparency of the glass material. Deep charcoal shadows and bright chrome highlights create a technical yet elegant showroom atmosphere, perfectly aligned with luxury interior design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlE8U6GTwYO3s5hkk1vbxfayJVlKjiJMFyKBLrWWqvW7CVOYHupDlG1JgZthZhWHfs1kTNWvaCiHR0s0S0vjup4QrL36l55enf45_HNNyBCj0POS1LEvpDUb01vo2WdewVXyiBVnGMw5pa4nWMFn_WY5A2Vdc4NrNoYgEewft2NE58cnYbGugud2a13nJIFuRSGvXj0qXxt_Sn6xUmny7dZR-2yaK9chWw8vrXRzsQaR2lUuG76p7aNHrSeKLmgxtOz70ay7SLrobC"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto">
+<span class="font-eyebrow-mono text-eyebrow-mono text-primary-fixed-dim uppercase block mb-6">[ FAQ ]</span>
+<h1 class="font-headline-lg text-headline-lg max-w-2xl mb-8">Frequently asked questions</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-xl opacity-90">
+                Discover the technical specifications, design possibilities, and maintenance requirements for our premium architectural glass solutions. Our experts have compiled this comprehensive guide to help you navigate your remodeling journey.
+            </p>
+</div>
+</header>
+<!-- FAQ Section -->
+<main class="bg-surface-container-low py-section-gap-desktop px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Category Sidebar (Left) -->
+<aside class="md:col-span-3 sticky top-32 space-y-6">
+<nav class="flex flex-col gap-4">
+<button class="text-left font-eyebrow-mono text-eyebrow-mono text-primary font-bold border-l-2 border-primary pl-4 py-1 transition-all">PRODUCTS</button>
+<button class="text-left font-eyebrow-mono text-eyebrow-mono text-on-surface-variant pl-4 py-1 hover:text-primary transition-all">ORDERING</button>
+<button class="text-left font-eyebrow-mono text-eyebrow-mono text-on-surface-variant pl-4 py-1 hover:text-primary transition-all">MATERIALS</button>
+<button class="text-left font-eyebrow-mono text-eyebrow-mono text-on-surface-variant pl-4 py-1 hover:text-primary transition-all">ACCOUNT</button>
+</nav>
+</aside>
+<!-- FAQ Cards (Right) -->
+<section class="md:col-span-9 space-y-4">
+<!-- Expanded Item -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300" open="">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">What glass products does Diversity Showers sell?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        We specialize in custom architectural glass solutions including frameless shower enclosures, sliding glass barn doors, custom-cut mirrors, glass railings, and commercial storefronts. All products are manufactured using premium-grade tempered safety glass designed for durability and aesthetic clarity.
+                    </div>
+</details>
+<!-- Item 2 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">Do you offer professional installation services?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        Yes, we provide full white-glove installation services across our service areas. Our team of certified technicians handles everything from precision laser measurements to final structural mounting to ensure your glass installations are perfectly aligned and secure.
+                    </div>
+</details>
+<!-- Item 3 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">What are the lead times for custom glass orders?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        Typically, custom fabrication for tempered glass takes between 10 to 15 business days. Once the glass has cleared our quality control inspection, we coordinate the installation date with you immediately.
+                    </div>
+</details>
+<!-- Item 4 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">What thickness of glass is recommended for shower doors?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        For frameless enclosures, we recommend 10mm (3/8") or 12mm (1/2") tempered glass. These thicknesses provide the structural integrity required for a stable, luxurious feel without the need for heavy metal frames.
+                    </div>
+</details>
+<!-- Item 5 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">How do I maintain and clean my new glass?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        We recommend using a daily squeegee to prevent water spots and lime scale. For cleaning, use a non-abrasive, pH-neutral glass cleaner. Many of our customers opt for a protective coating during fabrication which significantly reduces maintenance requirements.
+                    </div>
+</details>
+<!-- Item 6 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">Do you provide warranties on your glass and hardware?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        Absolutely. All our hardware is covered by a 5-year manufacturer warranty, and we provide a 1-year labor warranty on all installations. We stand by the precision of our craftsmanship.
+                    </div>
+</details>
+<!-- Item 7 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">Can you install glass over existing tile or stone?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        Yes, our specialized mounting hardware is designed to anchor securely into marble, porcelain, granite, and standard ceramic tile. We use diamond-tipped drills to ensure no cracking or damage to your existing surfaces.
+                    </div>
+</details>
+<!-- Item 8 -->
+<details class="faq-item group bg-surface-container-lowest chrome-border rounded-xl transition-all duration-300">
+<summary class="flex justify-between items-center p-8 cursor-pointer select-none">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">What finishes are available for hinges and handles?</span>
+<span class="material-symbols-outlined text-primary chevron transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-on-surface-variant font-body-md leading-relaxed border-t border-outline-variant/20 pt-6">
+                        We offer a wide palette including Polished Chrome, Brushed Nickel, Matte Black, Satin Brass, and Oil Rubbed Bronze. All hardware is solid brass or stainless steel for maximum corrosion resistance in humid environments.
+                    </div>
+</details>
+</section>
+</div>
+</main>
+<!-- Closing CTA -->
+<section class="bg-inverse-surface py-section-gap-desktop px-margin-desktop text-center">
+<div class="max-w-2xl mx-auto">
+<span class="font-eyebrow-mono text-eyebrow-mono text-primary-fixed uppercase block mb-4">[ STILL HAVE QUESTIONS? ]</span>
+<h2 class="font-headline-lg text-headline-lg text-surface-container-lowest mb-6">Our specialists are ready to help</h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-10">Get personalized guidance for your unique architectural requirements and technical specifications.</p>
+<button class="bg-[#2E7FA6] text-white px-10 py-4 rounded-full font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all">
+                Contact our team
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-dim px-margin-desktop py-section-gap-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest">DIVERSITY SHOWERS</div>
+<p class="text-surface-variant text-body-md max-w-xs">Precision architectural glass for the modern luxury home.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary-fixed mb-2">Navigation</h4>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Facebook</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Instagram</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-sm text-label-sm text-primary-fixed mb-2">Support</h4>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col justify-end">
+<p class="text-surface-variant text-body-md text-right md:text-left">© 2026 Diversity Showers LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple logic for category switching visual feedback
+        const buttons = document.querySelectorAll('aside nav button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => {
+                    b.classList.remove('text-primary', 'font-bold', 'border-l-2', 'border-primary');
+                    b.classList.add('text-on-surface-variant');
+                });
+                btn.classList.add('text-primary', 'font-bold', 'border-l-2', 'border-primary');
+                btn.classList.remove('text-on-surface-variant');
+            });
+        });
+
+        // Close other details when one is opened (Accordion behavior)
+        const details = document.querySelectorAll(".faq-item");
+        details.forEach((targetDetail) => {
+            targetDetail.addEventListener("click", () => {
+                details.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute("open");
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

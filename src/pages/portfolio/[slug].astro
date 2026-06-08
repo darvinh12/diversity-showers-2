@@ -1,0 +1,129 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Reveal from "../../components/Reveal.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { products, relatedProducts, FINISH_COLORS } from "../../data/products";
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+const related = relatedProducts(product, 4);
+---
+
+<Layout
+  active="portfolio"
+  title={`${product.name} (${product.code}) — Diversity Showers`}
+  description={product.description}
+>
+  <!-- Breadcrumb spacer over charcoal top -->
+  <section class="on-dark bg-[var(--color-charcoal)] pt-28 md:pt-32">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <nav class="code flex items-center gap-2 text-[var(--color-bone-muted)]">
+        <a href="/portfolio" class="transition-colors hover:text-[var(--color-bone)]">Portfolio</a>
+        <span>/</span>
+        <span class="text-[var(--color-bone)]">{product.categoryLabel}</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Product detail -->
+  <section class="on-dark bg-[var(--color-charcoal)] pb-20 pt-8 text-[var(--color-bone)] md:pb-28">
+    <div class="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-5 md:px-10 lg:grid-cols-2 lg:gap-16">
+      <!-- Gallery -->
+      <div class="reveal flex flex-col gap-4">
+        <div class="overflow-hidden rounded-[var(--radius-card)] border border-white/10 bg-white">
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            loading="eager"
+            decoding="async"
+            class="aspect-square w-full object-cover"
+          />
+        </div>
+        {
+          product.images.length > 1 && (
+            <div class="grid grid-cols-3 gap-4">
+              {product.images.slice(1).map((img) => (
+                <div class="overflow-hidden rounded-[var(--radius-sm)] border border-white/10 bg-white">
+                  <img src={img} alt={product.name} loading="lazy" decoding="async" class="aspect-square w-full object-cover" />
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Info -->
+      <div class="reveal">
+        <span class="eyebrow">{product.categoryLabel}</span>
+        <h1 class="mt-4 text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.03em]">
+          {product.name}
+        </h1>
+        <p class="code mt-3 text-[var(--color-water)]">{product.code}</p>
+
+        <p class="mt-6 text-base leading-relaxed text-[var(--color-bone-muted)]">
+          {product.description}
+        </p>
+
+        <!-- Finishes -->
+        <div class="mt-8">
+          <span class="eyebrow eyebrow--bone">Available Finishes</span>
+          <div class="mt-4 flex flex-wrap gap-3">
+            {
+              product.finishes.map((f) => (
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/15 py-1.5 pl-1.5 pr-4">
+                  <span
+                    class="h-5 w-5 rounded-full border border-white/20"
+                    style={`background:${FINISH_COLORS[f]?.hex ?? "#ccc"}`}
+                  />
+                  <span class="text-sm text-[var(--color-bone)]">{FINISH_COLORS[f]?.name ?? f}</span>
+                </span>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Specs table -->
+        <div class="mt-8 overflow-hidden rounded-[var(--radius-card)] border border-white/10">
+          <table class="w-full border-collapse text-left">
+            <tbody>
+              {
+                product.specs.map((spec, i) => (
+                  <tr class:list={["border-b border-white/8", i % 2 ? "bg-white/[0.02]" : ""]}>
+                    <th class="px-5 py-3 text-sm font-medium text-[var(--color-bone-muted)]">{spec.label}</th>
+                    <td class="code px-5 py-3 text-right text-[var(--color-bone)]">{spec.value}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="/contact" class="btn btn-primary">Request a quote</a>
+          <a href="/portfolio" class="btn btn-ghost-dark">Back to catalog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  {
+    related.length > 0 && (
+      <section class="bg-[var(--color-light)] py-20 md:py-24">
+        <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+          <h2 class="reveal text-2xl font-bold tracking-[-0.02em] text-[var(--color-ink)] md:text-3xl">
+            Related {product.categoryLabel.toLowerCase()}
+          </h2>
+          <div class="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
+            {related.map((p) => <ProductCard product={p} group="related" />)}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <Reveal />
+</Layout>

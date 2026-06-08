@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Reveal from "../components/Reveal.astro";
+import { site } from "../lib/site";
+import { services } from "../data/services";
+
+const contactDetails = [
+  { label: "Our Address", value: site.address.full },
+  { label: "Our Mailbox", value: site.email, href: `mailto:${site.email}` },
+  { label: "Office", value: site.phones.office, href: `tel:${site.phones.office.replace(/\s/g, "")}` },
+  { label: "Cell", value: site.phones.cell, href: `tel:${site.phones.cell.replace(/\s/g, "")}` },
+];
+
+const mapsQuery = encodeURIComponent(site.address.full);
+---
+
+<Layout
+  active=""
+  title="Contact Us — Diversity Showers"
+  description="Get in touch with Diversity Showers in Carrollton, TX. Request a quote for custom shower glass, mirrors and railings."
+>
+  <section class="on-dark bg-[var(--color-charcoal)] pt-32 pb-14 text-[var(--color-bone)] md:pt-40 md:pb-16">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <span class="eyebrow">[ Get in Touch ]</span>
+      <h1 class="mt-5 text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+        Let's start a project
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-bone-muted)] md:text-lg">
+        Give us a call or drop by anytime — we answer all enquiries within 24 hours on
+        business days.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-[var(--color-light)] py-16 md:py-24">
+    <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-start gap-8 px-5 md:px-10 lg:grid-cols-[1.4fr_1fr]">
+      <!-- Form -->
+      <div class="reveal rounded-[var(--radius-card)] border border-[var(--color-chrome)] bg-white p-7 md:p-9">
+        <h2 class="text-2xl font-bold tracking-[-0.02em] text-[var(--color-ink)]">Get in touch</h2>
+
+        <form
+          id="contact-form"
+          class="mt-7 flex flex-col gap-5"
+          action="https://formsubmit.co/info@diversityshowers.com"
+          method="POST"
+        >
+          <!-- formsubmit.co config (replace with real endpoint / reCAPTCHA on launch) -->
+          <input type="hidden" name="_subject" value="New enquiry — Diversity Showers" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="text-sm font-medium text-[var(--color-ink)]">Your name</label>
+            <input
+              id="name" name="name" type="text" required
+              class="min-h-[48px] rounded-[var(--radius-input)] border border-[var(--color-chrome)] bg-white px-4 text-[var(--color-ink)] outline-none transition-colors focus:border-[var(--color-water)]"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-sm font-medium text-[var(--color-ink)]">Your email</label>
+            <input
+              id="email" name="email" type="email" required
+              class="min-h-[48px] rounded-[var(--radius-input)] border border-[var(--color-chrome)] bg-white px-4 text-[var(--color-ink)] outline-none transition-colors focus:border-[var(--color-water)]"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="service" class="text-sm font-medium text-[var(--color-ink)]">Service interested in</label>
+            <select
+              id="service" name="service" required
+              class="min-h-[48px] rounded-[var(--radius-input)] border border-[var(--color-chrome)] bg-white px-4 text-[var(--color-ink)] outline-none transition-colors focus:border-[var(--color-water)]"
+            >
+              <option value="" disabled selected>Select a service…</option>
+              {services.map((s) => <option value={s.title}>{s.title}</option>)}
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="message" class="text-sm font-medium text-[var(--color-ink)]">
+              Tell us how we can help you <span class="text-[var(--color-ink-muted)]">(optional)</span>
+            </label>
+            <textarea
+              id="message" name="message" rows="4"
+              class="rounded-[var(--radius-input)] border border-[var(--color-chrome)] bg-white px-4 py-3 text-[var(--color-ink)] outline-none transition-colors focus:border-[var(--color-water)]"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-1 w-full sm:w-auto">
+            Send message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+          </button>
+
+          <p class="text-xs leading-relaxed text-[var(--color-ink-muted)]">
+            We respect your privacy. Your information is only used to respond to your
+            enquiry — see our <a href="/privacy-policy" class="text-[var(--color-water)] underline">Privacy Policy</a>.
+          </p>
+        </form>
+      </div>
+
+      <!-- Details -->
+      <div class="reveal rounded-[var(--radius-card)] bg-[var(--color-charcoal)] p-7 text-[var(--color-bone)] md:p-9">
+        <span class="eyebrow">[ Our Contact Details ]</span>
+        <ul class="mt-6 flex flex-col gap-5">
+          {
+            contactDetails.map((c) => (
+              <li>
+                <span class="eyebrow eyebrow--bone block">{c.label}</span>
+                {c.href ? (
+                  <a href={c.href} class="mt-2 block text-sm text-[var(--color-bone)] transition-colors hover:text-[var(--color-water)]">{c.value}</a>
+                ) : (
+                  <p class="mt-2 text-sm text-[var(--color-bone)]">{c.value}</p>
+                )}
+              </li>
+            ))
+          }
+          <li>
+            <span class="eyebrow eyebrow--bone block">Hours</span>
+            <ul class="mt-2 space-y-1 text-sm text-[var(--color-bone-muted)]">
+              {site.hours.map((h) => <li>{h.day} — {h.time}</li>)}
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mt-8 flex gap-3 border-t border-white/10 pt-6">
+          {
+            [
+              { l: "LinkedIn", h: site.social.linkedin },
+              { l: "Instagram", h: site.social.instagram },
+              { l: "Facebook", h: site.social.facebook },
+              { l: "Pinterest", h: site.social.pinterest },
+            ].map((s) => (
+              <a
+                href={s.h}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.l}
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[var(--color-bone-muted)] transition-colors hover:border-[var(--color-water)] hover:text-[var(--color-bone)]"
+              >
+                <span class="font-mono text-[10px] font-bold uppercase">{s.l.slice(0, 2)}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="bg-[var(--color-light)] pb-20 md:pb-28">
+    <div class="mx-auto max-w-[1280px] px-5 md:px-10">
+      <div class="reveal overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-chrome)]">
+        <iframe
+          title="Diversity Showers location"
+          src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+          width="100%"
+          height="420"
+          style="border:0; display:block;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <Reveal />
+</Layout>
