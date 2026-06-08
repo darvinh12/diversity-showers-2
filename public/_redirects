@@ -1,0 +1,9 @@
+# Cloudflare Pages — redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# (CF Pages already serves /404.html for unmatched routes automatically.)
+
+# Legacy WordPress slugs → new routes
+/contacts        /contact         301
+/contacts/       /contact         301
+/our-services/   /our-services    301
+/portfolio-category/*  /portfolio  301

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diversityshowers.com/sitemap-index.xml
