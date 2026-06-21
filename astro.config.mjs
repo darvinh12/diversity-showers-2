@@ -5,12 +5,13 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
   site: 'https://diversityshowers.com',
   trailingSlash: 'ignore',
-
   integrations: [react(), sitemap()],
 
   vite: {
@@ -21,4 +22,6 @@ export default defineConfig({
     // Static-only build for HostGator: no runtime image service required.
     service: { entrypoint: 'astro/assets/services/sharp' },
   },
+
+  adapter: cloudflare(),
 });
