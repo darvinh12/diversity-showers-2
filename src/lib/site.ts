@@ -3,7 +3,7 @@ export const site = {
   legalName: "Diversity Showers LLC",
   tagline: "Bathrooms that hold light",
   description:
-    "A small Carrollton studio designing and installing custom glass for bathrooms across the DFW Metroplex — frameless and framed showers, mirrors, railings and repairs.",
+    "A small Carrollton studio designing and manufacturing custom glass for bathrooms across the DFW Metroplex — frameless and framed showers, mirrors and railings.",
   address: {
     line1: "1711 Briercroft Ct #140",
     line2: "Carrollton, TX 75006",
@@ -15,8 +15,8 @@ export const site = {
     cell: "+1 469 491 6057",
   },
   hours: [
-    { day: "Mon – Fri", time: "7:30 AM – 4:00 PM" },
-    { day: "Saturday", time: "8:00 AM – 11:00 AM" },
+    { day: "Mon – Fri", time: "7:30 AM – 4:30 PM" },
+    { day: "Saturday", time: "Closed" },
     { day: "Sunday", time: "Closed" },
   ],
   social: {

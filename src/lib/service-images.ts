@@ -5,14 +5,13 @@ const FALLBACK = "/images/paginas/servicios/shower-box-scaled.webp";
 
 export const SERVICE_IMAGES: Record<string, string> = {
   "frameless-shower-doors": "/images/paginas/servicios/shower-box-scaled.webp",
-  "framed-shower-doors": "/images/paginas/servicios/470.webp",
-  "wall-mirrors": "/images/paginas/servicios/tidy-bathroom-with-shiny-tiles.webp",
-  "glass-railing-systems": "/images/paginas/servicios/bathroom-8368662_1920.webp",
-  "commercial-wall-mirrors": "/images/paginas/servicios/faucet-bathroom.webp",
-  "commercial-entry-doors": "/images/paginas/servicios/small-bathroom-with-modern-style-decor.webp",
-  // The two below reuse the closest-fitting photo (no perfect own image yet).
+  "framed-shower-doors": "/images/paginas/servicios/framed-shower-door.jpg",
+  "wall-mirrors": "/images/paginas/servicios/wall-mirror.jpg",
+  "glass-railing-systems": "/images/paginas/servicios/glass-railing.jpg",
+  "commercial-wall-mirrors": "/images/paginas/servicios/commercial-mirror.jpg",
+  "commercial-entry-doors": "/images/paginas/servicios/commercial-entry-doors.jpg",
   "residential-glass-repair-and-replacement": "/images/paginas/servicios/470.webp",
-  "office-glass-partitions-and-commercial-glass": "/images/paginas/servicios/bathroom-8368662_1920.webp",
+  "office-glass-partitions-and-commercial-glass": "/images/paginas/servicios/office-partition.jpg",
 };
 
 export const serviceImage = (slug: string) => SERVICE_IMAGES[slug] ?? FALLBACK;

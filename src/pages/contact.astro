@@ -4,14 +4,19 @@ import Reveal from "../components/Reveal.astro";
 import { site } from "../lib/site";
 import { services } from "../data/services";
 
+const mapsQuery = encodeURIComponent(site.address.full);
+
 const contactDetails = [
-  { label: "Our Address", value: site.address.full },
+  {
+    label: "Our Address",
+    value: site.address.full,
+    href: `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`,
+    external: true,
+  },
   { label: "Our Mailbox", value: site.email, href: `mailto:${site.email}` },
   { label: "Office", value: site.phones.office, href: `tel:${site.phones.office.replace(/\s/g, "")}` },
   { label: "Cell", value: site.phones.cell, href: `tel:${site.phones.cell.replace(/\s/g, "")}` },
 ];
-
-const mapsQuery = encodeURIComponent(site.address.full);
 ---
 
 <Layout
@@ -107,7 +112,12 @@ const mapsQuery = encodeURIComponent(site.address.full);
               <li>
                 <span class="eyebrow eyebrow--bone block">{c.label}</span>
                 {c.href ? (
-                  <a href={c.href} class="mt-2 block text-sm text-[var(--color-bone)] transition-colors hover:text-[var(--color-water)]">{c.value}</a>
+                  <a
+                    href={c.href}
+                    target={c.external ? "_blank" : undefined}
+                    rel={c.external ? "noopener noreferrer" : undefined}
+                    class="mt-2 block text-sm text-[var(--color-bone)] transition-colors hover:text-[var(--color-water)]"
+                  >{c.value}</a>
                 ) : (
                   <p class="mt-2 text-sm text-[var(--color-bone)]">{c.value}</p>
                 )}

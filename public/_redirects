@@ -3,7 +3,9 @@
 # (CF Pages already serves /404.html for unmatched routes automatically.)
 
 # Legacy WordPress slugs → new routes
+# NOTE: do NOT add a "/our-services/  /our-services" rule. Cloudflare Pages serves
+# directory pages at their trailing-slash URL, so stripping the slash here creates
+# an infinite redirect loop (the browser shows "this page isn't working").
 /contacts        /contact         301
 /contacts/       /contact         301
-/our-services/   /our-services    301
 /portfolio-category/*  /portfolio  301
